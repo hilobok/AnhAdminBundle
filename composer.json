@@ -1,0 +1,33 @@
+{
+    "name": "anh/admin-bundle",
+    "type": "symfony-bundle",
+    "description": "Simple admin dashboard bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Andrew Hilobok",
+            "email": "hilobok@gmail.com"
+        }
+    ],
+
+    "require": {
+
+    },
+
+    "minimum-stability": "stable",
+
+    "autoload": {
+        "psr-0": {
+            "Anh\\Bundle\\AdminBundle": ""
+        }
+    },
+
+    "target-dir": "Anh/Bundle/AdminBundle",
+
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}
+
