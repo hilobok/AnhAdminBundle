@@ -1,0 +1,13 @@
+anh_admin:
+    pattern:  /
+    defaults: { _controller: AnhAdminBundle:Default:index }
+
+anh_admin_login:
+    pattern: /login
+    defaults: { _controller: AnhAdminBundle:Default:login }
+
+anh_admin_login_check:
+    pattern: /login/check
+
+anh_admin_logout:
+    pattern: /logout

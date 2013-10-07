@@ -1,0 +1,6 @@
+parameters:
+    anh_admin.bundles_lister.class: Anh\Bundle\AdminBundle\BundlesLister
+
+services:
+    anh_admin.bundles_lister:
+        class: %anh_admin.bundles_lister.class%

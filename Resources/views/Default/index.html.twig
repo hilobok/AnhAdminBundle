@@ -1,0 +1,18 @@
+{% extends 'AnhAdminBundle::base.html.twig' %}
+
+{% block body %}
+    <h1>
+        Bundles
+        <a href="{{ url('anh_admin_logout') }}">logout</a>
+    </h1>
+
+    {% if bundles %}
+        <dl>
+        {% for bundle in bundles %}
+            {#{ dump(bundle) }#}
+            <dt><a href="{{ url(bundle.route) }}">{{ bundle.title }}</a> {{ bundle.version }}</dt>
+            <dd>{{ bundle.description }}</dd>
+        {% endfor %}
+        </dl>
+    {% endif %}
+{% endblock %}
