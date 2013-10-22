@@ -1,0 +1,23 @@
+{% extends 'form_div_layout.html.twig' %}
+
+{% block form_row %}
+{% spaceless %}
+    <div class="form_row">
+        {{ form_label(form) }}
+        {{ form_errors(form) }}
+        {{ form_widget(form) }}
+    </div>
+{% endspaceless %}
+{% endblock form_row %}
+
+{% block form_widget_simple %}
+{% spaceless %}
+    <div class="form_widget">{{ parent() }}</div>
+{% endspaceless %}
+{% endblock %}
+
+{% block choice_widget %}
+{% spaceless %}
+    <div class="form_widget">{{ parent() }}</div>
+{% endspaceless %}
+{% endblock choice_widget %}
