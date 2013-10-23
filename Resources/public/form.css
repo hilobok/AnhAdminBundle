@@ -6,7 +6,7 @@ form input, form select {
     font-size: 16px;
 }
 
-form input[type="text"] {
+form input[type="text"], form input[type="password"] {
     width: 100%;
 }
 
