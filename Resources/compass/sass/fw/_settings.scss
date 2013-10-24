@@ -1,0 +1,42 @@
+
+    // Brand colors
+    // -------------------------
+
+    $black:                     #000 !default;
+    $grayDarker:                #222 !default;
+    $grayDark:                  #333 !default;
+    $gray:                      #555 !default;
+    $grayLight:                 #999 !default;
+    $grayLighter:               #eee !default;
+    $almostWhite:               #f5f5f5 !default;
+    $white:                     #fff !default;
+
+    $state_primary:             #428bca !default;
+    $state_success:             #5cb85c !default;
+    $state_warning:             #f0ad4e !default;
+    $state_danger:              #d9534f !default;
+    $state_info:                #5bc0de !default;
+    $state_default:             #a7a9aa !default; // default gray button bg
+
+    $fontSizeBase:              14px !default;
+    // Based on 14px font-size and 20px line-height
+    $fontSizeLarge:             $fontSizeBase * 1.25; // ~18px
+    $fontSizeSmall:             $fontSizeBase * 0.85; // ~12px
+    $fontSizeMini:              $fontSizeBase * 0.75; // ~11px
+
+    // Component sizing
+    // -------------------------
+    // Based on 14px font-size and 1.5 line-height
+
+    $paddingLarge:              11px 14px !default; // 44px
+    $paddingSmall:              4px 10px !default;  // 26px
+    $paddingMini:               2px 6px !default;   // 22px
+
+    $borderRadiusBase:          4px !default;
+    $borderRadiusLarge:         6px !default;
+    $borderRadiusSmall:         3px !default;
+
+    $lineHeightBase:            20px !default;
+
+    $bodyBackground:            $white !default;
+    $textColor:                 $grayDark !default;

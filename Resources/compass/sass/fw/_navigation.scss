@@ -1,0 +1,170 @@
+@import "compass/css3";
+// @import "compass/utilities/general/clearfix";
+
+$navigation-line-height: 1.8 !default;
+$navigation-h-padding: 1em !default;
+$navigation-v-padding: .5em !default;
+$navigation-padding: $navigation-v-padding $navigation-h-padding !default;
+$navigation-border-radius: 4px !default;
+$navigation-submenu-width: 8em !default;
+
+%navigation {
+	overflow: visible;
+
+	ul {
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+
+		li {
+			margin: 0;
+		}
+	}
+
+    // z-index: 15;
+}
+
+%navigation-menu {
+	// *height: 100%;
+
+	li {
+		// *height: 100%;
+
+		a {
+			@include single-transition('background', 100ms);
+        }
+
+        a, a:active, a:visited, a:link {
+            color: darken($white, 5%);
+		}
+
+		&:hover {
+			ul.submenu {
+				display: block;
+			}
+
+            background-color: #eee;
+            @include box-shadow(inset 0 0 7px darken(#eee, 10%));
+
+            a {
+                color: lighten($black, 30%);
+            }
+		}
+
+		ul.submenu {
+			display: none;
+			position: absolute;
+
+			li {
+				overflow: hidden;
+
+                &:hover {
+                    background-color: darken(#eee, 7%);
+                }
+
+                a {
+                    display: block;
+                    float: none;
+                    color: lighten($black, 30%);
+                    padding: 0.3em 1em;
+				}
+			}
+
+			background: #eee;
+
+            border: 1px solid darken(#eee, 5%);
+
+            @include border-bottom-left-radius(4px);
+            @include border-bottom-right-radius(4px);
+            @include box-shadow(0 5px 25px -3px opacify(darken(#eee, 15%), 0.3));
+            @include opacity(0.98);
+		}
+	}
+
+	@include pie-clearfix();
+}
+
+%navigation-menu-horizontal {
+    background-color: lighten($black, 60%);
+    @include border-radius($navigation-border-radius);
+    padding: 0 1em;
+
+	li {
+		float: left;
+		line-height: $navigation-line-height;
+		position: relative;
+
+		a {
+			//float: left;
+			padding: $navigation-v-padding $navigation-h-padding;
+			// display: inline-block;
+			@include inline-block();
+            text-decoration: none;
+        }
+
+		ul {
+			&.submenu {
+				width: $navigation-submenu-width;
+				// top: ($navigation-line-height + ($navigation-v-padding * 2));
+				// top: 15px;
+				// left: 0;
+				z-index: 9999;
+
+				li {
+					float: none;
+				}
+			}
+		}
+	}
+}
+
+
+%nav {
+  margin-left: 0;
+  margin-bottom: 0;
+  padding-left: 0; // Override default ul/ol
+  list-style: none;
+  @include pie-clearfix;
+
+    & > dd {
+        display: block;
+        padding-left: 0;
+
+        & > a {
+          position: relative;
+          display: block;
+          padding: 6px 12px; // TODO: nav item padding should be a var
+        }
+
+        & > a:hover,
+        & > a:focus {
+          text-decoration: none;
+          background-color: $grayLighter;
+        }
+    }
+}
+
+%nav-pills {
+    & > dd {
+        float: left;
+
+        &  > a { // TODO: don't be so specific limiting this to an <a> tag
+            border-radius: 5px;
+        }
+
+        & + dd > a { // TODO: don't be so specific limiting this to an <a> tag
+            margin-left: 2px; // TODO: this pill spacing matches tab spacing, use a var
+        }
+    }
+
+    & > .active {
+        & > a,
+        & > a:hover,
+        & > a:focus { // TODO: don't be so specific limiting this to an <a> tag
+          color: #fff;
+          // background-color: darken(#eee, 10%); // TODO: this bg color should be inherited from global menu styling
+          background-color: lighten($black, 70%);
+          text-decoration: none;
+        }
+    }
+}

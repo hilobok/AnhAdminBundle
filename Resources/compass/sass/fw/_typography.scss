@@ -1,0 +1,302 @@
+$text-color: #444 !default;
+
+$link-color: #0069D6 !default;
+$link-hover-color: lighten($link-color, 10%) !default;
+$link-visited-color: lighten(#800080, 5%) !default;
+$link-active-color: darken($link-visited-color, 5%) !default;
+
+$headings-color: #404040 !default;
+
+$font-stack-style: serif !default;
+
+$sans-font-stack: Times, "Times New Roman", serif !default;
+$serif-font-stack: Arial, sans-serif !default;
+$mono-font-stack: 'Helvetica Neue', Helvetica, Arial, sans-serif !default;
+
+$base-font-size: 0 !default;
+
+@mixin base-font-size($size) {
+    @if $size > 0 {
+        font-size: $size;
+    }
+}
+
+@mixin font-stack($style: sans) {
+    @if $style == sans {
+        font-family: $sans-font-stack;
+    }
+
+    @if $style == serif {
+        font-family: $serif-font-stack;
+    }
+
+    @if $style == mono {
+        font-family: $mono-font-stack;
+    }
+}
+
+html {
+    @include base-font-size($base-font-size);
+}
+
+body {
+    color: $text-color;
+    @include font-stack($font-stack-style);
+}
+
+a {
+    color: $link-color;
+    text-decoration: none;
+
+    &:link {
+        color: $link-color;
+    }
+
+    &:hover {
+        color: $link-hover-color;
+        // text-decoration: underline;
+    }
+
+    &:visited {
+        color: $link-visited-color;
+    }
+
+    &:active {
+        color: $link-active-color
+    };
+}
+
+/* Headings  */
+h1, h2, h3, h4, h5, h6 {
+    //font-weight: bold;
+    color: $headings-color;
+
+    small {
+        color: lighten($headings-color, 10%);
+        font-size: .6em;
+        font-weight: 100;
+        line-height: 1;
+    }
+}
+
+/*
+h1 {font-size: 2.5em;}
+h2 {font-size: 2em;}
+h3 {font-size: 1.715em;}
+h4 {font-size: 1.438em;}
+h5 {font-size: 1.250em;}
+h6 {font-size: 1em;}
+
+h3, h4, h5, h6 {
+    line-height: 1.3;
+}
+
+h1 small {font-size: .6em; color: #BFBFBF; font-weight: 100;}
+*/
+
+small {
+    color: lighten($text-color, 10%);/*  font-size: .6em; */
+}
+
+/* Paragraphs  */
+
+p {
+    line-height: 1.5;
+}
+
+// VERTICAL SPACING
+
+h1, h2, h3, h4, h5, h6, section {
+
+    address + &,
+    article + &,
+    aside + &,
+    audio + &,
+    blockquote + &,
+    canvas + &,
+    details + &,
+    dl + &,
+    figure + &,
+    footer + &,
+    form + &,
+    header + &,
+    hr + &,
+    img + &,
+    ol + &,
+    p + &,
+    pre + &,
+    table + &,
+    ul + &,
+    video + & {
+        margin-bottom: 1em;
+    }
+
+    & + address,
+    & + article,
+    & + aside,
+    & + audio,
+    & + blockquote,
+    & + canvas,
+    & + details,
+    & + dl,
+    & + figure,
+    & + footer,
+    & + form,
+    & + header,
+    & + hr,
+    & + img,
+    & + ol,
+    & + p,
+    & + pre,
+    & + table,
+    & + ul,
+    & + video {
+        margin-bottom: 1em;
+    }
+
+    address,
+    article,
+    aside,
+    audio,
+    blockquote,
+    canvas,
+    details,
+    dl,
+    figure,
+    footer,
+    form,
+    header,
+    hr,
+    img,
+    ol,
+    p,
+    //pre,
+    table,
+    ul,
+    video {
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    div + & {
+        margin-bottom: 1em;
+    }
+
+    & + div {
+        margin-bottom: 1em;
+    }
+
+    & + & {
+        margin-bottom: 1em;
+    }
+
+}
+
+address,
+article,
+aside,
+audio,
+blockquote,
+canvas,
+details,
+dl,
+figure,
+footer,
+form,
+header,
+hr,
+img,
+nav,
+ol,
+p,
+pre,
+table,
+ul,
+video {
+
+    div + &,
+    & + div {
+        margin-bottom: 1em;
+    }
+
+    & + & {
+        margin-bottom: 1em;
+    }
+}
+
+input, textarea {
+    color: #666;
+}
+
+address {
+    color: lighten($text-color, 20%);
+    font-size: 1em;
+    line-height: 1.4;
+
+    p { margin-top: 0 }
+
+    h6 { color: $text-color; }
+}
+
+abbr {
+    &:hover {
+        cursor: help;
+    }
+}
+
+blockquote {
+    border-left: 4px solid #ddd;
+    padding-left: 1em;
+    margin: 1em 0;
+    font-weight: 200;
+    font-size: 1.1em;
+
+    small {
+        font-size: .9em;
+
+        &::before,
+        &::after {
+            content: ' — ';
+        }
+    }
+}
+
+ul, ol, dl {
+    padding-left: 1.4em;
+    margin:0;
+}
+
+ol li {
+    list-style: decimal outside;
+}
+
+dl {
+    padding: 0em;
+}
+
+dl dt {
+    font-weight: bold;
+    margin-top: .7em;
+}
+
+dl dd {
+    padding-left: 1em;
+    margin: .5em 0
+}
+
+ul, ol {
+    line-height: 1.4;
+    margin: 0;
+    padding-left: 1.4em;
+
+    li {
+        margin: .5em 0;
+    }
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #ddd;
+    margin: 1em 0;
+}

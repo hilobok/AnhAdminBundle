@@ -1,0 +1,113 @@
+// ---------------------------------------------------------------------------
+// Imports
+
+@import "fw/normalize";
+
+// layout
+$total-columns: 12;
+$column-width: 4em;
+$gutter-width: 1em;
+$grid-padding: $gutter-width;
+// $container-style: fixed;
+// $show-grid-backgrounds: true;
+@import "susy";
+
+
+@import "fw/settings";
+
+
+// typography
+$link-color: #035FD6;
+$link-visited-color: #035FD6;
+$font-stack-style: mono;
+@import "fw/typography";
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+}
+
+a {
+	text-decoration: underline;
+}
+
+// navigation
+$navigation-submenu-width: 10em;
+@import "fw/navigation";
+
+.sub-nav {
+	@extend %nav;
+	@extend %nav-pills;
+}
+
+// form
+@import "fw/forms";
+
+form {
+	label {
+    	font-family: 'Open Sans', sans-serif;
+		font-weight: 400;
+    }
+
+	input[type="text"], input[type="password"] {
+	    width: 100%;
+	}
+
+	.form_row {
+	    margin-bottom: 1em;
+	}
+}
+
+// buttons
+@import "fw/buttons";
+
+.button, button, input[type="submit"] {
+	@extend %button;
+
+	&.danger {
+		@extend %button-color-danger;
+	}
+}
+
+
+// tables
+@import "fw/tables";
+
+// custom
+.body {
+    margin: 0 auto;
+    width: 900px;
+}
+
+
+.list_row {
+	line-height: 1.6;
+	margin-bottom: 0.7em;
+
+	.list_row_flags {
+		position: absolute;
+		width: 1em;
+
+		i {
+			font-size: 90%;
+			opacity: 0.5;
+		}
+
+		a {
+			color: #999;
+		}
+	}
+
+	.list_row_content {
+		margin-left: 1.5em;
+		// padding: 2px 5px;
+		// background-color: #fbfbfb;
+	}
+}
+
+.button_row {
+	margin-bottom: 1em;
+
+	a {
+		@extend %button;
+	}
+}
