@@ -1,6 +1,6 @@
 <?php
 
-namespace Anh\Bundle\AdminBundle\Controller;
+namespace Anh\AdminBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Security\Core\SecurityContext;

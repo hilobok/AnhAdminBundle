@@ -1,10 +1,10 @@
 <?php
 
-namespace Anh\Bundle\AdminBundle;
+namespace Anh\AdminBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Anh\Bundle\AdminBundle\DependencyInjection\Compiler\CustomCompilerPass;
+use Anh\AdminBundle\DependencyInjection\Compiler\CustomCompilerPass;
 
 class AnhAdminBundle extends Bundle
 {

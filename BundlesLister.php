@@ -1,6 +1,6 @@
 <?php
 
-namespace Anh\Bundle\AdminBundle;
+namespace Anh\AdminBundle;
 
 class BundlesLister
 {

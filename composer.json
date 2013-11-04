@@ -18,11 +18,11 @@
 
     "autoload": {
         "psr-0": {
-            "Anh\\Bundle\\AdminBundle": ""
+            "Anh\\AdminBundle": ""
         }
     },
 
-    "target-dir": "Anh/Bundle/AdminBundle",
+    "target-dir": "Anh/AdminBundle",
 
     "extra": {
         "branch-alias": {

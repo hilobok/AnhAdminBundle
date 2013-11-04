@@ -1,5 +1,5 @@
 parameters:
-    anh_admin.bundles_lister.class: Anh\Bundle\AdminBundle\BundlesLister
+    anh_admin.bundles_lister.class: Anh\AdminBundle\BundlesLister
 
 services:
     anh_admin.bundles_lister:
